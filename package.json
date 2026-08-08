@@ -1,0 +1,17 @@
+﻿{
+  "name": "tigers-car-rental",
+  "version": "1.0.0",
+  "description": "Tigers Car Rental — modern car rental website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "seed": "node db/seed.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.7.0",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "express-validator": "^7.2.1"
+  }
+}
