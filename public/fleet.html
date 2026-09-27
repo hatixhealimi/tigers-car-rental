@@ -69,7 +69,7 @@
 
 
         <p>
-            Choose from economy, business and luxury vehicles.
+            Choose from compact, SUV, luxury and sports vehicles.
         </p>
 
 
@@ -90,23 +90,27 @@
         <div class="fleet-filters">
 
 
-            <button class="filter-btn active">
+            <button class="filter-btn active" type="button" data-filter="all" aria-pressed="true">
                 All
             </button>
 
 
-            <button class="filter-btn">
+            <button class="filter-btn" type="button" data-filter="compact" aria-pressed="false">
                 Compact
             </button>
 
 
-            <button class="filter-btn">
+            <button class="filter-btn" type="button" data-filter="suv" aria-pressed="false">
                 SUV
             </button>
 
 
-            <button class="filter-btn">
+            <button class="filter-btn" type="button" data-filter="luxury" aria-pressed="false">
                 Luxury
+            </button>
+
+            <button class="filter-btn" type="button" data-filter="sport" aria-pressed="false">
+                Sport
             </button>
 
 
@@ -115,136 +119,8 @@
 
 
 
-        <div class="fleet-grid">
-
-
-
-            <a href="car.html" class="car-item">
-
-
-                <img src="images/bmw.jpg">
-
-
-                <div class="car-meta">
-
-
-                    <h3>
-                        BMW 5 Series
-                    </h3>
-
-
-                    <p class="muted">
-                        Luxury Sedan • Automatic
-                    </p>
-
-
-
-                    <div class="car-price">
-
-                        <strong>
-                            60€
-                        </strong>
-
-                        <span>
-/ day
-</span>
-
-                    </div>
-
-
-                </div>
-
-
-            </a>
-
-
-
-
-
-            <a href="mercedes.html" class="car-item">
-
-
-                <img src="images/mercedes.jpg">
-
-
-                <div class="car-meta">
-
-
-                    <h3>
-                        Mercedes C-Class
-                    </h3>
-
-
-                    <p class="muted">
-                        Business Sedan • Automatic
-                    </p>
-
-
-                    <div class="car-price">
-
-                        <strong>
-                            70€
-                        </strong>
-
-                        <span>
-/ day
-</span>
-
-
-                    </div>
-
-
-                </div>
-
-
-            </a>
-
-
-
-
-
-
-            <a href="audi.html" class="car-item">
-
-
-                <img src="images/audi.jpg">
-
-
-                <div class="car-meta">
-
-
-                    <h3>
-                        Audi A6
-                    </h3>
-
-
-                    <p class="muted">
-                        Premium Sedan • Automatic
-                    </p>
-
-
-                    <div class="car-price">
-
-                        <strong>
-                            65€
-                        </strong>
-
-                        <span>
-/ day
-</span>
-
-
-                    </div>
-
-
-                </div>
-
-
-            </a>
-
-
-
-        </div>
+        <div class="fleet-grid"></div>
+        <p class="fleet-empty" data-i18n="fleet.empty" aria-live="polite" hidden></p>
 
 
     </div>
@@ -280,9 +156,13 @@
 
 
 
-<script src="js/script.js"></script>
+<script src="js/cars.js"></script>
+<script src="js/main.js"></script>
 
 
 </body>
 
 </html>
+
+
+

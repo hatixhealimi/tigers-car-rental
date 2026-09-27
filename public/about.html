@@ -12,9 +12,6 @@
     <link rel="stylesheet" href="css/styles.css">
 
 </head>
-<script src="js/main.js"></script>
-
-
 <body>
 
 
@@ -35,20 +32,25 @@
 
         <nav class="nav-links">
 
-            <a href="index.html">Home</a>
-            <a class="active" href="about.html">About</a>
-            <a href="fleet.html">Fleet</a>
-            <a href="services.html">Services</a>
-            <a href="team.html">Team</a>
-            <a href="blog.html">News</a>
-            <a href="contact.html">Contact</a>
+            <a href="index.html" data-i18n="nav.home">Home</a>
+            <a class="active" href="about.html" data-i18n="nav.about">About</a>
+            <a href="fleet.html" data-i18n="nav.fleet">Fleet</a>
+            <a href="services.html" data-i18n="nav.services">Services</a>
+            <a href="team.html" data-i18n="nav.team">Team</a>
+            <a href="blog.html" data-i18n="nav.blog">News</a>
+            <a href="contact.html" data-i18n="nav.contact">Contact</a>
 
         </nav>
 
 
         <div class="nav-actions">
+            <div class="lang-switch" aria-label="Choose language">
+                <button type="button" data-lang="en" aria-label="English">EN</button>
+                <button type="button" data-lang="mk" aria-label="Macedonian">MK</button>
+                <button type="button" data-lang="al" aria-label="Albanian">AL</button>
+            </div>
 
-            <a href="booking.html" class="btn btn-primary">
+            <a href="booking.html" class="btn btn-primary" data-i18n="nav.book">
                 Book Now
             </a>
 
@@ -65,11 +67,11 @@
 
     <div class="container">
 
-        <h1>
+        <h1 data-i18n="about.title">
             About Tigers
         </h1>
 
-        <p>
+        <p data-i18n="about.hero">
             A premium car rental company built around reliability,
             comfort and trust.
         </p>
@@ -91,17 +93,17 @@
 
             <div>
 
-                <div class="eyebrow">
+                <div class="eyebrow" data-i18n="about.eyebrow">
                     Who We Are
                 </div>
 
 
-                <h2 class="section-title">
+                <h2 class="section-title" data-i18n="about.heading">
                     Driving Excellence
                 </h2>
 
 
-                <p class="section-lead">
+                <p class="section-lead" data-i18n="about.intro">
 
                     Tigers Car Rental provides premium vehicles
                     for business trips, vacations and everyday journeys.
@@ -109,7 +111,7 @@
                 </p>
 
 
-                <p>
+                <p data-i18n="about.body">
 
                     Our mission is to make car rental simple.
                     We provide clean vehicles, transparent prices
@@ -137,7 +139,7 @@
 
                 <strong>500+</strong>
 
-                <span>Vehicles</span>
+                <span data-i18n="about.vehicles">Vehicles</span>
 
             </div>
 
@@ -146,7 +148,7 @@
 
                 <strong>10+</strong>
 
-                <span>Years Experience</span>
+                <span data-i18n="about.experience">Years Experience</span>
 
             </div>
 
@@ -155,7 +157,7 @@
 
                 <strong>24/7</strong>
 
-                <span>Support</span>
+                <span data-i18n="about.support">Support</span>
 
             </div>
 
@@ -164,7 +166,7 @@
 
                 <strong>3</strong>
 
-                <span>Locations</span>
+                <span data-i18n="about.locations">Locations</span>
 
             </div>
 
@@ -208,9 +210,10 @@
 
 
 
-<script src="js/script.js"></script>
+<script src="js/main.js"></script>
 
 
 </body>
 
 </html>
+

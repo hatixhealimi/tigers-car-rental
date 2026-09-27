@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tigers Car Rental | Vehicle Details</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header class="site-header">
+    <div class="nav-inner">
+        <a href="index.html" class="logo">
+            <div class="logo-mark"></div>
+            <div class="logo-text">Tigers <span>Car Rental</span></div>
+        </a>
+        <nav class="nav-links">
+            <a href="index.html" data-i18n="nav.home">Home</a>
+            <a href="about.html" data-i18n="nav.about">About</a>
+            <a href="fleet.html" data-i18n="nav.fleet">Fleet</a>
+            <a href="services.html" data-i18n="nav.services">Services</a>
+            <a href="team.html" data-i18n="nav.team">Team</a>
+            <a href="blog.html" data-i18n="nav.blog">News</a>
+            <a href="contact.html" data-i18n="nav.contact">Contact</a>
+        </nav>
+        <a href="fleet.html" class="btn btn-primary" data-i18n="vehicle.back">Back to Fleet</a>
+    </div>
+</header>
+
+<main class="section" data-vehicle-detail>
+    <div class="container">
+        <div class="detail-layout">
+            <div class="detail-media">
+                <img data-vehicle-image src="" alt="">
+            </div>
+            <div class="detail-panel">
+                <h1 data-vehicle-name></h1>
+                <div class="price"><strong data-vehicle-price></strong> <span data-i18n="fleet.day">/ day</span></div>
+                <p class="vehicle-description" data-vehicle-description></p>
+                <div class="specs">
+                    <div class="spec"><strong data-i18n="vehicle.year">Year</strong><span data-vehicle-year></span></div>
+                    <div class="spec"><strong data-i18n="common.seats">Seats</strong><span data-vehicle-seats></span></div>
+                    <div class="spec"><strong data-i18n="vehicle.transmission">Transmission</strong><span data-vehicle-transmission></span></div>
+                    <div class="spec"><strong data-i18n="vehicle.fuel">Fuel</strong><span data-vehicle-fuel></span></div>
+                    <div class="spec"><strong data-i18n="vehicle.category">Category</strong><span data-vehicle-category></span></div>
+                </div>
+                <ul class="features-list" data-vehicle-features></ul>
+                <a class="btn btn-primary" data-vehicle-book href="booking.html" data-i18n="fleet.book">Book This Car</a>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom"><p>© 2026 Tigers Car Rental</p><p>Skopje, North Macedonia</p></div>
+    </div>
+</footer>
+<script src="js/cars.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

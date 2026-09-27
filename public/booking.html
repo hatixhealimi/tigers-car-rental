@@ -158,21 +158,7 @@
                             </label>
 
 
-                            <select>
-
-                                <option>
-                                    BMW 5 Series
-                                </option>
-
-                                <option>
-                                    Mercedes C-Class
-                                </option>
-
-                                <option>
-                                    Audi A6
-                                </option>
-
-                            </select>
+                            <select id="booking-car" name="car" required><option value="bmw-5-series">BMW 5 Series</option><option value="mercedes-c-class">Mercedes C-Class</option><option value="audi-a6">Audi A6</option></select>
 
 
                         </div>
@@ -329,6 +315,15 @@
 
 
 
+<script src="js/cars.js"></script>
+<script src="js/main.js"></script>
+<script>const requestedCar = new URLSearchParams(location.search).get("car"); if (requestedCar) { const carSelect = document.getElementById("booking-car"); if ([...carSelect.options].some(option => option.value === requestedCar)) carSelect.value = requestedCar; }</script>
 </body>
 
 </html>
+
+
+
+
+
+
