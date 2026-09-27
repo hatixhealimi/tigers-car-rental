@@ -169,11 +169,13 @@ ul { list-style: none; }
 .filter-btn:hover, .filter-btn.active { border-color: var(--tiger); color: var(--tiger); }
 .fleet-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
 .car-item { display: block; overflow: hidden; background: var(--ash); }
+.car-item[hidden] { display: none; }
 .car-item img { width: 100%; aspect-ratio: 16/10; object-fit: cover; transition: transform 0.7s var(--ease); }
 .car-item:hover img { transform: scale(1.06); }
 .car-meta { padding: 1.15rem 1.2rem 1.35rem; border-top: 1px solid rgba(242,239,232,0.06); }
 .car-meta h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 0.25rem; }
 .car-meta .muted { font-size: 0.82rem; color: var(--stone); text-transform: capitalize; }
+.car-description { min-height: 2.8em; margin-top: 0.65rem; color: var(--fog); font-size: 0.84rem; line-height: 1.45; }
 .car-price { margin-top: 0.85rem; display: flex; align-items: baseline; justify-content: space-between; }
 .car-price strong { font-family: var(--font-display); font-size: 1.6rem; color: var(--tiger); letter-spacing: 0.02em; }
 .car-price span { font-size: 0.8rem; color: var(--stone); }
@@ -280,6 +282,7 @@ ul { list-style: none; }
 .cookie-banner p { font-size: 0.9rem; margin-bottom: 1rem; line-height: 1.45; }
 .cookie-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; }
 .cookie-banner .btn-ghost { color: var(--ink); border-color: rgba(12,12,12,0.25); }
+.cookie-policy-link { align-self: center; color: var(--ink); font-size: 0.82rem; font-weight: 600; text-decoration: underline; text-underline-offset: 0.18em; }
 
 .legal { padding-bottom: 4rem; }
 .legal h2 { margin: 2rem 0 0.75rem; font-size: 1.35rem; }
@@ -304,4 +307,5 @@ ul { list-style: none; }
 @media (max-width: 640px) {
     .form-row { grid-template-columns: 1fr; }
     .hero { align-items: center; padding-bottom: 3rem; }
+    .cookie-banner { right: 1rem; bottom: 1rem; left: 1rem; max-width: none; }
 }

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Tigers Car Rental | Fleet</title>
-
+    <link rel="icon" type="image/svg" href="./images/logoo.svg">
     <link rel="stylesheet" href="css/styles.css">
 
 </head>
@@ -90,22 +90,22 @@
         <div class="fleet-filters">
 
 
-            <button class="filter-btn active">
+            <button class="filter-btn active" type="button" data-fleet-filter="all" aria-pressed="true">
                 All
             </button>
 
 
-            <button class="filter-btn">
+            <button class="filter-btn" type="button" data-fleet-filter="compact" aria-pressed="false">
                 Compact
             </button>
 
 
-            <button class="filter-btn">
+            <button class="filter-btn" type="button" data-fleet-filter="suv" aria-pressed="false">
                 SUV
             </button>
 
 
-            <button class="filter-btn" >
+            <button class="filter-btn" type="button" data-fleet-filter="luxury" aria-pressed="false">
                 Luxury
             </button>
 
@@ -119,7 +119,7 @@
 
 
 
-            <a href="car.html" class="car-item">
+            <a href="booking.html?car=1" class="car-item" data-car-category="luxury">
 
 
                 <img src="images/bmw.jpg">
@@ -129,20 +129,21 @@
 
 
                     <h3>
-                        BMW 5 Series
+                        BMW 3 Series
                     </h3>
 
 
                     <p class="muted">
                         Luxury Sedan • Automatic
                     </p>
+                    <p class="car-description" data-i18n="fleet.bmw.desc">Executive comfort, premium interior, and effortless long-distance driving.</p>
 
 
 
                     <div class="car-price">
 
                         <strong>
-                            60€
+                            79€
                         </strong>
 
                         <span>
@@ -161,29 +162,30 @@
 
 
 
-            <a href="mercedes.html" class="car-item">
+            <a href="booking.html?car=5" class="car-item" data-car-category="luxury">
 
 
-                <img src="images/mercedes.jpg">
+                <img src="images/sport.jpg" alt="Porsche 911 Carrera">
 
 
                 <div class="car-meta">
 
 
                     <h3>
-                        Mercedes C-Class
+                        Porsche 911 Carrera
                     </h3>
 
 
                     <p class="muted">
-                        Business Sedan • Automatic
+                        Luxury Sport • Automatic
                     </p>
+                    <p class="car-description" data-i18n="fleet.porsche.desc">Iconic performance for special occasions and unforgettable drives.</p>
 
 
                     <div class="car-price">
 
                         <strong>
-                            70€
+                            249€
                         </strong>
 
                         <span>
@@ -204,7 +206,7 @@
 
 
 
-            <a href="audi.html" class="car-item">
+            <a href="booking.html?car=3" class="car-item" data-car-category="luxury">
 
 
                 <img src="images/audi.jpg">
@@ -214,19 +216,20 @@
 
 
                     <h3>
-                        Audi A6
+                        Audi A4
                     </h3>
 
 
                     <p class="muted">
                         Premium Sedan • Automatic
                     </p>
+                    <p class="car-description" data-i18n="fleet.audi.desc">A spacious premium sedan for business trips and weekend escapes.</p>
 
 
                     <div class="car-price">
 
                         <strong>
-                            65€
+                            72€
                         </strong>
 
                         <span>
@@ -243,6 +246,56 @@
             </a>
 
 
+
+            <a href="booking.html?car=4" class="car-item" data-car-category="compact">
+                <img src="images/golf.jpg" alt="Volkswagen Golf">
+                <div class="car-meta">
+                    <h3>Volkswagen Golf</h3>
+                    <p class="muted">Compact • Manual</p>
+                    <p class="car-description" data-i18n="fleet.golf.desc">Practical, efficient, and easy to park in the city.</p>
+                    <div class="car-price"><strong>45€</strong><span>/ day</span></div>
+                </div>
+            </a>
+
+            <a href="booking.html?car=7" class="car-item" data-car-category="compact">
+                <img src="images/ford-focus.webp" alt="MINI Cooper S">
+                <div class="car-meta">
+                    <h3>MINI Cooper S</h3>
+                    <p class="muted">Compact • Automatic</p>
+                    <p class="car-description" data-i18n="fleet.mini.desc">A fun automatic city car with nimble handling and a premium feel.</p>
+                    <div class="car-price"><strong>55€</strong><span>/ day</span></div>
+                </div>
+            </a>
+
+            <a href="booking.html?car=6" class="car-item" data-car-category="suv">
+                <img src="images/suv.jpg" alt="Toyota RAV4 SUV">
+                <div class="car-meta">
+                    <h3>Toyota RAV4</h3>
+                    <p class="muted">SUV • Hybrid automatic</p>
+                    <p class="car-description" data-i18n="fleet.rav4.desc">A family-ready hybrid SUV with room for every journey.</p>
+                    <div class="car-price"><strong>68€</strong><span>/ day</span></div>
+                </div>
+            </a>
+
+            <a href="booking.html?car=2" class="car-item" data-car-category="suv">
+                <img src="images/mercedes.jpg" alt="Mercedes-Benz GLC SUV">
+                <div class="car-meta">
+                    <h3>Mercedes-Benz GLC</h3>
+                    <p class="muted">SUV • Hybrid automatic</p>
+                    <p class="car-description" data-i18n="fleet.glc.desc">Luxury SUV comfort, advanced safety, and all-weather confidence.</p>
+                    <div class="car-price"><strong>95€</strong><span>/ day</span></div>
+                </div>
+            </a>
+
+            <a href="booking.html?car=8" class="car-item" data-car-category="suv">
+                <img src="images/suv.jpg" alt="Range Rover Evoque">
+                <div class="car-meta">
+                    <h3>Range Rover Evoque</h3>
+                    <p class="muted">SUV • Automatic</p>
+                    <p class="car-description" data-i18n="fleet.evoque.desc">Distinctive compact luxury with all-terrain capability.</p>
+                    <div class="car-price"><strong>110€</strong><span>/ day</span></div>
+                </div>
+            </a>
 
         </div>
 

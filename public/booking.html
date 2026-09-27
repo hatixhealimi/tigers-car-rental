@@ -7,8 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Tigers Car Rental | Booking</title>
-
+    <link rel="icon" type="image/svg" href="./images/logoo.svg">
     <link rel="stylesheet" href="css/styles.css">
+    <script defer src="js/main.js"></script>
 
 </head>
 
@@ -99,7 +100,7 @@
 
 
 
-                <form class="form-grid">
+                <form class="form-grid" id="bookingForm">
 
 
 
@@ -112,7 +113,7 @@
                                 Full Name
                             </label>
 
-                            <input type="text">
+                            <input type="text" name="customer_name" required minlength="2" autocomplete="name">
 
                         </div>
 
@@ -124,7 +125,7 @@
                                 Email
                             </label>
 
-                            <input type="email">
+                            <input type="email" name="customer_email" required autocomplete="email">
 
                         </div>
 
@@ -145,7 +146,7 @@
                                 Phone
                             </label>
 
-                            <input type="text">
+                            <input type="tel" name="customer_phone" required minlength="6" autocomplete="tel">
 
                         </div>
 
@@ -158,30 +159,38 @@
                             </label>
 
 
-                            <select>
+                            <select name="car_id" required>
 
-                                <option>
-                                    BMW 5 Series
+                                <option value="1">
+                                    BMW 3 Series
                                 </option>
 
-                                <option>
-                                    Mercedes C-Class
+                                <option value="2">
+                                    Mercedes-Benz GLC
                                 </option>
 
-                                <option>
-                                    Audi A6
+                                <option value="3">
+                                    Audi A4
                                 </option>
 
-                                <option>
-                                    Vollswagen Golf
+                                <option value="4">
+                                    Volkswagen Golf
                                 </option>
 
-                                <option>
-                                    Ford Focus
+                                <option value="5">
+                                    Porsche 911 Carrera
                                 </option>
 
-                                <option>
-                                    Toyota Yaris
+                                <option value="6">
+                                    Toyota RAV4
+                                </option>
+
+                                <option value="7">
+                                    MINI Cooper S
+                                </option>
+
+                                <option value="8">
+                                    Range Rover Evoque
                                 </option>
 
                             </select>
@@ -206,7 +215,7 @@
                                 Pickup Date
                             </label>
 
-                            <input type="date">
+                            <input type="date" name="pickup_date" required>
 
                         </div>
 
@@ -218,7 +227,7 @@
                                 Drop-off Date
                             </label>
 
-                            <input type="date">
+                            <input type="date" name="dropoff_date" required>
 
                         </div>
 
@@ -229,13 +238,43 @@
 
 
 
+                    <div class="form-row">
+
+                        <div class="field">
+
+                            <label>
+                                Pickup Location
+                            </label>
+
+                            <select name="pickup_location" required>
+                                <option value="Skopje Airport">Skopje Airport</option>
+                                <option value="Skopje City Center">Skopje City Center</option>
+                            </select>
+
+                        </div>
+
+                        <div class="field">
+
+                            <label>
+                                Drop-off Location
+                            </label>
+
+                            <select name="dropoff_location" required>
+                                <option value="Skopje Airport">Skopje Airport</option>
+                                <option value="Skopje City Center">Skopje City Center</option>
+                            </select>
+
+                        </div>
+
+                    </div>
+
                     <div class="field">
 
                         <label>
                             Notes
                         </label>
 
-                        <textarea></textarea>
+                        <textarea name="notes"></textarea>
 
 
                     </div>
@@ -243,7 +282,7 @@
 
 
 
-                    <button class="btn btn-primary">
+                    <button class="btn btn-primary" type="submit">
 
                         Request Booking
 
