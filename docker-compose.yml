@@ -1,0 +1,13 @@
+services:
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      PORT: 3000
+    volumes:
+      - tigers-data:/app/db
+    restart: unless-stopped
+
+volumes:
+  tigers-data:

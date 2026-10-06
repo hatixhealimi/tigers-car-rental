@@ -108,26 +108,97 @@ const Tigers = {
     if (!banner) {
       banner = document.createElement("aside");
       banner.className = "cookie-banner";
-      banner.setAttribute("aria-label", "Cookie preferences");
-      banner.innerHTML = `<p data-i18n="cookie.text"></p><div class="cookie-actions"><button type="button" class="btn btn-primary" data-cookie-choice="all" data-i18n="cookie.accept"></button><button type="button" class="btn btn-ghost" data-cookie-choice="essential" data-i18n="cookie.essential"></button></div>`;
       document.body.append(banner);
     }
+    banner.setAttribute("id", "cookieBanner");
+    banner.setAttribute("role", "dialog");
+    banner.setAttribute("aria-modal", "false");
+    banner.setAttribute("aria-label", "Cookie preferences");
+    banner.innerHTML = this.cookieBannerMarkup();
 
-    // Check if user has already accepted or configured cookies
-    const cookieConsent = this.getCookie("tigers_cookie_consent");
-    if (cookieConsent) {
-      banner.classList.remove("show");
-      return;
-    }
-    banner.classList.add("show");
+    const preferences = this.getCookiePreferences();
+    banner.classList.toggle("show", !preferences);
+    this.setCookieControls(banner, preferences || { essential: true, analytics: false, marketing: false });
+    this.ensureCookieSettingsButton(banner);
 
-    // Accept button listener
     banner.addEventListener("click", (event) => {
-      const choice = event.target.closest("[data-cookie-choice]")?.dataset.cookieChoice;
-      if (!choice) return;
-      this.setCookie("tigers_cookie_consent", choice, 180);
-      banner.classList.remove("show");
+      const action = event.target.closest("[data-cookie-action]")?.dataset.cookieAction;
+      if (!action) return;
+      if (action === "all") this.saveCookiePreferences({ essential: true, analytics: true, marketing: true });
+      if (action === "essential") this.saveCookiePreferences({ essential: true, analytics: false, marketing: false });
+      if (action === "settings") banner.classList.add("settings-open");
+      if (action === "back") banner.classList.remove("settings-open");
+      if (action === "save") {
+        this.saveCookiePreferences({
+          essential: true,
+          analytics: banner.querySelector("[name='cookie-analytics']").checked,
+          marketing: banner.querySelector("[name='cookie-marketing']").checked
+        });
+      }
+      if (["all", "essential", "save"].includes(action)) banner.classList.remove("show");
     });
+  },
+
+  ensureCookieSettingsButton(banner) {
+    let button = document.querySelector(".cookie-settings-trigger");
+    if (!button) {
+      button = document.createElement("button");
+      button.className = "cookie-settings-trigger";
+      button.type = "button";
+      button.textContent = "Cookie settings";
+      document.body.append(button);
+    }
+    button.addEventListener("click", () => {
+      const preferences = this.getCookiePreferences() || { essential: true, analytics: false, marketing: false };
+      this.setCookieControls(banner, preferences);
+      banner.classList.add("show", "settings-open");
+    });
+  },
+
+  cookieBannerMarkup() {
+    return `
+      <div class="cookie-summary">
+        <p class="cookie-eyebrow" data-i18n="cookie.title">Your privacy, your choice</p>
+        <h2 data-i18n="cookie.heading">We use cookies</h2>
+        <p data-i18n="cookie.text">We use essential cookies to run the site and optional analytics to improve it.</p>
+        <div class="cookie-actions">
+          <button type="button" class="btn btn-primary" data-cookie-action="all" data-i18n="cookie.accept">Accept all</button>
+          <button type="button" class="btn btn-ghost" data-cookie-action="essential" data-i18n="cookie.essential">Essential only</button>
+          <button type="button" class="cookie-link-button" data-cookie-action="settings" data-i18n="cookie.manage">Manage preferences</button>
+        </div>
+      </div>
+      <div class="cookie-settings" aria-label="Cookie settings">
+        <div class="cookie-settings-head">
+          <div><p class="cookie-eyebrow" data-i18n="cookie.title">Your privacy, your choice</p><h2 data-i18n="cookie.manageTitle">Cookie preferences</h2></div>
+          <button type="button" class="cookie-close" data-cookie-action="back" aria-label="Back">×</button>
+        </div>
+        <p data-i18n="cookie.settingsText">Choose which optional cookies you allow. Essential cookies are always on.</p>
+        <label class="cookie-option"><span><strong data-i18n="cookie.essentialTitle">Essential</strong><small data-i18n="cookie.essentialInfo">Required for the website to work.</small></span><input type="checkbox" checked disabled><i></i></label>
+        <label class="cookie-option"><span><strong data-i18n="cookie.analyticsTitle">Analytics</strong><small data-i18n="cookie.analyticsInfo">Helps us understand how visitors use the website.</small></span><input type="checkbox" name="cookie-analytics"><i></i></label>
+        <label class="cookie-option"><span><strong data-i18n="cookie.marketingTitle">Marketing</strong><small data-i18n="cookie.marketingInfo">Helps us show relevant offers and advertising.</small></span><input type="checkbox" name="cookie-marketing"><i></i></label>
+        <div class="cookie-actions"><button type="button" class="btn btn-primary" data-cookie-action="save" data-i18n="cookie.save">Save preferences</button><button type="button" class="cookie-link-button" data-cookie-action="back" data-i18n="cookie.back">Back</button></div>
+      </div>`;
+  },
+
+  setCookieControls(banner, preferences) {
+    banner.querySelector("[name='cookie-analytics']").checked = Boolean(preferences.analytics);
+    banner.querySelector("[name='cookie-marketing']").checked = Boolean(preferences.marketing);
+  },
+
+  getCookiePreferences() {
+    try {
+      const stored = localStorage.getItem("tigers_cookie_preferences");
+      if (stored) return JSON.parse(stored);
+      const legacy = this.getCookie("tigers_cookie_consent");
+      if (legacy) return { essential: true, analytics: legacy === "all", marketing: legacy === "all" };
+    } catch (_) { return null; }
+    return null;
+  },
+
+  saveCookiePreferences(preferences) {
+    localStorage.setItem("tigers_cookie_preferences", JSON.stringify(preferences));
+    this.setCookie("tigers_cookie_consent", preferences.analytics && preferences.marketing ? "all" : "custom", 180);
+    window.dispatchEvent(new CustomEvent("tigers:cookie-preferences", { detail: preferences }));
   },
 
   ensureLanguageSwitch() {
