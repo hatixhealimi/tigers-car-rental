@@ -16,6 +16,7 @@ const Tigers = {
     this.populateBookingCars();
     this.initLanguageSwitch();
     this.initFleetFilters();
+    this.initVisualEffects();
     this.translationPromise = this.loadTranslations();
     this.initCookieBanner();
   },
@@ -137,6 +138,37 @@ const Tigers = {
       }
       if (["all", "essential", "save"].includes(action)) banner.classList.remove("show");
     });
+  },
+
+  initVisualEffects() {
+    const header = document.querySelector(".site-header");
+    const updateHeader = () => header?.classList.toggle("scrolled", window.scrollY > 24);
+    updateHeader();
+    window.addEventListener("scroll", updateHeader, { passive: true });
+
+    const menuButton = document.querySelector(".nav-toggle");
+    const navLinks = document.querySelector(".nav-links");
+    if (menuButton && navLinks) {
+      menuButton.setAttribute("aria-label", "Open menu");
+      menuButton.addEventListener("click", () => {
+        const isOpen = navLinks.classList.toggle("open");
+        menuButton.setAttribute("aria-expanded", String(isOpen));
+      });
+    }
+
+    const revealItems = document.querySelectorAll(".reveal");
+    if (!("IntersectionObserver" in window)) {
+      revealItems.forEach((item) => item.classList.add("visible"));
+      return;
+    }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.14 });
+    revealItems.forEach((item) => observer.observe(item));
   },
 
   ensureCookieSettingsButton(banner) {

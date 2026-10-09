@@ -112,7 +112,10 @@
     "vehicle.transmission": "Transmission",
     "vehicle.fuel": "Fuel",
     "vehicle.category": "Category",
-    "vehicle.back": "Back to Fleet"
+    "vehicle.back": "Back to Fleet",
+    "brand.standard": "THE TIGERS STANDARD",
+    "team.heading": "The people behind every journey",
+    "team.intro": "A small, dedicated local team focused on making every handover easy."
   },
   "mk": {
     "nav.home": "Дома",
@@ -123,31 +126,23 @@
     "nav.blog": "Новости",
     "nav.contact": "Контакт",
     "nav.book": "Резервирај",
-
     "brand.tagline": "Возете со доверба",
-
     "hero.title": "Премиум автомобили.\nФер цени.",
     "hero.sub": "Изнајмување автомобили подготвени за аеродром низ Косово и Албанија — проверени, осигурани и предадени за неколку минути.",
     "hero.cta": "Погледни ја флотата",
     "hero.cta2": "Побарај понуда",
-
     "home.featured": "Избрана флота",
     "home.featuredSub": "Од градски автомобили до спортски возила.",
     "home.why": "Зошто Tigers",
-
     "home.why1": "Транспарентни цени",
     "home.why1t": "Без скриени трошоци. Цената што ја гледате е цената што ја плаќате.",
-
     "home.why2": "Следење на летови",
     "home.why2t": "Ги следиме доцнењата на летовите — автомобилот ве чека вас.",
-
     "home.why3": "24/7 помош",
     "home.why3t": "Еден број за проблеми со гуми, замена на возило и прашања.",
-
     "home.services": "Наши услуги",
     "home.news": "Од патиштата",
     "home.viewAll": "Види ги сите",
-
     "about.title": "За Tigers",
     "about.hero": "Премиум компанија за изнајмување автомобили изградена врз сигурност, удобност и доверба.",
     "about.eyebrow": "Кои сме ние",
@@ -159,76 +154,55 @@
     "about.support": "Поддршка",
     "about.locations": "Локации",
     "about.lead": "Создадовме компанија за изнајмување на која би и ги довериле сопствените клучеви.",
-
     "about.p1": "Tigers Car Rental започна во Приштина со мала премиум флота и голем фокус на квалитетна услуга. Денес работиме во Приштина, аеродромот и Тирана.",
-
     "about.p2": "Секое возило поминува дигитална проверка: гориво, гуми, фотографии од ентериерот и јасно објаснето осигурување.",
-
     "about.stats1": "Возила достапни дневно",
     "about.stats2": "Оценка од клиенти",
     "about.stats3": "Локации",
     "about.stats4": "Години искуство",
-
     "team.title": "Луѓето зад клучевите",
     "team.lead": "Операции, гостопримство и грижа за возилата — запознајте го нашиот тим.",
-
     "fleet.title": "Нашата флота",
     "fleet.lead": "Изберете компактни, SUV, луксузни и спортски возила.",
     "fleet.empty": "Сè уште нема автомобили во оваа категорија. Изберете друга категорија или погледнете ги сите автомобили.",
-
     "fleet.all": "Сите",
     "fleet.compact": "Компактни",
     "fleet.sedan": "Седан",
     "fleet.suv": "SUV",
     "fleet.sport": "Спортски",
-
     "fleet.from": "Од",
     "fleet.day": "/ ден",
     "fleet.book": "Резервирај го ова возило",
     "fleet.details": "Детали",
-
     "services.title": "Услуги",
     "services.lead": "Краткорочно изнајмување, корпоративни возила и долгорочен наем.",
-
     "contact.title": "Контакт",
     "contact.lead": "Прашања, деловни сметки или понуда — одговараме во рок од еден работен ден.",
-
     "contact.name": "Име и презиме",
     "contact.email": "Е-пошта",
     "contact.phone": "Телефон",
     "contact.subject": "Предмет",
     "contact.message": "Порака",
     "contact.send": "Испрати порака",
-
     "contact.success": "Ви благодариме — вашата порака е примена.",
     "contact.error": "Проверете ја формата и обидете се повторно.",
-
     "contact.info": "Посетете нè и јавете се",
-
     "blog.title": "Новости и водичи",
     "blog.lead": "Совети за патување, новости за флотата и информации за нашите услуги.",
     "blog.read": "Прочитај повеќе",
-
     "booking.title": "Резервирај автомобил",
     "booking.lead": "Изберете датуми и локации — ќе потврдиме преку е-пошта.",
-
     "booking.name": "Име и презиме",
     "booking.email": "Е-пошта",
     "booking.phone": "Телефон",
-
     "booking.pickup": "Локација за преземање",
     "booking.dropoff": "Локација за враќање",
-
     "booking.pickupDate": "Датум на преземање",
     "booking.dropoffDate": "Датум на враќање",
-
     "booking.car": "Возило",
     "booking.notes": "Забелешки (опционално)",
-
     "booking.submit": "Побарај резервација",
-
     "booking.success": "Резервацијата е примена! Ќе ве контактираме наскоро.",
-
     "cookie.text": "Користиме неопходни колачиња за функционирање на страницата и опционални аналитички колачиња.",
     "cookie.title": "Вашата приватност, ваш избор",
     "cookie.heading": "Користиме колачиња",
@@ -245,13 +219,10 @@
     "cookie.back": "Назад",
     "cookie.accept": "Прифати ги сите",
     "cookie.essential": "Само неопходни",
-
     "footer.rights": "Сите права се задржани.",
     "footer.privacy": "Приватност",
     "footer.terms": "Услови",
-
     "footer.tagline": "Премиум изнајмување. Фер цени. Подготвени кога ќе пристигнете.",
-
     "common.seats": "седишта",
     "common.available": "Достапно",
     "common.loading": "Се вчитува...",
@@ -259,7 +230,10 @@
     "vehicle.transmission": "Менувач",
     "vehicle.fuel": "Гориво",
     "vehicle.category": "Категорија",
-    "vehicle.back": "Назад кон флотата"
+    "vehicle.back": "Назад кон флотата",
+    "team.heading": "Луѓето зад секое патување",
+    "team.intro": "Мал, посветен локален тим фокусиран на тоа секое примопредавање да биде лесно."
+
   },
   "al": {
     "nav.home": "Ballina",
@@ -374,7 +348,8 @@
     "vehicle.transmission": "Kambio",
     "vehicle.fuel": "Karburanti",
     "vehicle.category": "Kategoria",
-    "vehicle.back": "Kthehu te flota"
+    "vehicle.back": "Kthehu te flota",
+    "team.heading": "Njerëzit pas çdo udhëtimi",
+    "team.intro": "Një ekip i vogël, i përkushtuar lokal, i fokusuar në lehtësimin e çdo dorëzimi."
   }
 }
-
